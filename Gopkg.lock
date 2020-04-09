@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:1bb6e4efe6024f7eb07d983202a2209d84c1432bdeb74a1491cc3c2cbecf41a1"
+  digest = "1:ea4665767a0878e18f4e1113f6229acb0657b1e547b888a1d377ae78a60df9f1"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -33,20 +33,26 @@
     "internal/strings",
     "internal/sync/singleflight",
     "private/protocol",
-    "private/protocol/ec2query",
     "private/protocol/json/jsonutil",
     "private/protocol/query",
     "private/protocol/query/queryutil",
     "private/protocol/rest",
     "private/protocol/xml/xmlutil",
     "service/autoscaling",
-    "service/ec2",
     "service/sts",
     "service/sts/stsiface",
   ]
   pruneopts = "UT"
   revision = "56d753ef1b04f798fe380cc3c29eaf5cf7509fee"
   version = "v1.30.5"
+
+[[projects]]
+  digest = "1:870d441fe217b8e689d7949fef6e43efbc787e50f200cb1e70dbca9204a1d6be"
+  name = "github.com/inconshreveable/mousetrap"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
 
 [[projects]]
   digest = "1:bb81097a5b62634f3e9fec1014657855610c82d19b9a40c17612e32651e35dca"
@@ -64,6 +70,25 @@
   version = "v1.0.2"
 
 [[projects]]
+  digest = "1:b3264343f78bc8533cf3dd8a1862f031b111046762a443d5bb018a1ea343b2db"
+  name = "github.com/liamg/clinch"
+  packages = [
+    "prompt",
+    "terminal",
+  ]
+  pruneopts = "UT"
+  revision = "157efdecadf224aa93646cb2673275fecba6bf99"
+  version = "v1.0.0"
+
+[[projects]]
+  digest = "1:2ee0041b7e76fe5f2ccc9c0fc4f86f0e55e5ee172cbbde668ae1b6a61671dafc"
+  name = "github.com/liamg/tml"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f4e54be0cc943a92deb45ec45f6a0f2df45471cc"
+  version = "v0.2.0"
+
+[[projects]]
   digest = "1:0599141a8403114d34f1e546604ad6c5361b70dfa80e80c635f438cdbf71b43a"
   name = "github.com/sirupsen/logrus"
   packages = ["."]
@@ -72,10 +97,37 @@
   version = "v1.5.0"
 
 [[projects]]
+  digest = "1:1e80255eea46af2e2db7da90f95e4b5cfe84f3b58d9a8598ec35b0f2a75c60e4"
+  name = "github.com/spf13/cobra"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "6607e6b8603f56adb027298ee6695e06ffb3a819"
+  version = "0.0.7"
+
+[[projects]]
+  digest = "1:524b71991fc7d9246cc7dc2d9e0886ccb97648091c63e30eef619e6862c955dd"
+  name = "github.com/spf13/pflag"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2e9d26c8c37aae03e3f9d4e90b7116f5accb7cab"
+  version = "v1.0.5"
+
+[[projects]]
   branch = "master"
-  digest = "1:9add8ca641c3c4bcac43d737e30e5ef3322b55ede8deaa49bdd2907e1d5c706a"
+  digest = "1:ad2bf20798504fbde0c5bdf5ee83d3354fb101d32c5b2267f811c1958b91b0ab"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  pruneopts = "UT"
+  revision = "056763e48d71961566155f089ac0f02f1dda9b5a"
+
+[[projects]]
+  branch = "master"
+  digest = "1:734913c949b634e396785ffbb4e57bc7c05ee1ad5446b3d2ce28ec113f6b81e3"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows",
+  ]
   pruneopts = "UT"
   revision = "e3b113bbe6a423737ae98f42118ce9366e112e12"
 
@@ -86,8 +138,9 @@
     "github.com/aws/aws-sdk-go/aws",
     "github.com/aws/aws-sdk-go/aws/session",
     "github.com/aws/aws-sdk-go/service/autoscaling",
-    "github.com/aws/aws-sdk-go/service/ec2",
+    "github.com/liamg/clinch/prompt",
     "github.com/sirupsen/logrus",
+    "github.com/spf13/cobra",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
