@@ -1,9 +1,12 @@
+
 package main
 
 import (
-	"github.com/owenrumney/toolbox/internal/asg"
+	"github.com/owenrumney/toolbox/commands"
+	"github.com/owenrumney/toolbox/internal"
 )
 
 func main() {
-	asg.GetAutoScalingGroups()
+	internal.LoadConfig()
+	commands.Execute()
 }
