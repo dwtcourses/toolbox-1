@@ -16,4 +16,5 @@ func LoadConfig() {
 		panic(fmt.Errorf("Fatal error config file: %s \n", err))
 	}
 
+	viper.AutomaticEnv()
 }
