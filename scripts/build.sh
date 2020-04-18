@@ -2,7 +2,7 @@
 
 set -e
 
-output=bin/toolbox
+output=/usr/local/bin/toolbox
 
 mkdir -p bin
 GO111MODULE=on go build -o $output github.com/owenrumney/toolbox/cmd/toolbox
