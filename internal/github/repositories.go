@@ -7,8 +7,6 @@ import (
 	"github.com/google/go-github/github"
 	"github.com/liamg/clinch/prompt"
 	"github.com/owenrumney/toolbox/internal/action"
-	"github.com/spf13/viper"
-	"golang.org/x/oauth2"
 	"io/ioutil"
 	"os"
 	"path"
@@ -24,18 +22,6 @@ var repoFile string
 func init() {
 	homeDir, _ := os.UserHomeDir()
 	repoFile = path.Join(homeDir, ".toolbox", "repos.json")
-}
-
-func getClient() *github.Client {
-	var newClient *github.Client
-	ctx := context.Background()
-	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: viper.GetString("GITHUB_TOKEN")},
-	)
-	tc := oauth2.NewClient(ctx, ts)
-
-	newClient = github.NewClient(tc)
-	return newClient
 }
 
 func GetRepos(filter string) {
@@ -68,6 +54,7 @@ func chooseAction(repo *github.Repository) {
 		{Description: "Open in browser", Action: func() { action.OpenInBrowser(repo.GetHTMLURL()) }},
 		{Description: "Try to find locally", Action: func() { println("Open locally") }},
 		{Description: "Show outstanding pull requests", Action: func() { println("Show outstanding pull requests") }},
+		{Description: "Print repo json", Action: func() { action.PrintJson(repo) }},
 	}
 
 	var actionChoices []string
@@ -98,7 +85,7 @@ func getRepositories() repoListing {
 
 func IndexRepos() {
 	ctx := context.Background()
-	client := getClient()
+	client := GetClient(ctx)
 
 	opt := &github.RepositoryListOptions{
 		ListOptions: github.ListOptions{PerPage: 50},
