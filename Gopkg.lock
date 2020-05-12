@@ -114,15 +114,15 @@
   revision = "c2b33e84"
 
 [[projects]]
-  digest = "1:69c4c768ab244922f0294cbf120850cd80bc5f286eddf8d0fe94243bbbd810de"
+  digest = "1:a4daff828bb87570ca6090ba5001423f5505ac425e0b4ffe4c3687050f91cdaf"
   name = "github.com/liamg/clinch"
   packages = [
     "prompt",
     "terminal",
   ]
   pruneopts = "UT"
-  revision = "d2dffdf6e0bc3f5af3e65980f96db7dcbc612550"
-  version = "v1.1.0"
+  revision = "d998538aaa058bc5f2905f48982a9ae3e4ad6e86"
+  version = "v1.2.0"
 
 [[projects]]
   digest = "1:2ee0041b7e76fe5f2ccc9c0fc4f86f0e55e5ee172cbbde668ae1b6a61671dafc"
@@ -157,12 +157,31 @@
   version = "v1.2.2"
 
 [[projects]]
+  digest = "1:9da70d59b493a23b55d09eb724f4881173d6285716d24fe6966865da40b8335f"
+  name = "github.com/owenrumney/clinch"
+  packages = ["prompt"]
+  pruneopts = "UT"
+  revision = "d998538aaa058bc5f2905f48982a9ae3e4ad6e86"
+  version = "v1.2.0"
+
+[[projects]]
   digest = "1:1d835d5c3153aceef96c2d58866edde1aa70e25339831cff07b1e47456410e5c"
   name = "github.com/pelletier/go-toml"
   packages = ["."]
   pruneopts = "UT"
   revision = "8e8d2a6aad23fcaa64716c5fa6975ec3abbf8281"
   version = "v1.7.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:9167cb7652c9232fe1aab118399685f1fd8f028c8e6ea24dd402062e8eff5b4b"
+  name = "github.com/pkg/term"
+  packages = [
+    ".",
+    "termios",
+  ]
+  pruneopts = "UT"
+  revision = "aa71e9d9e942418fbb97d80895dcea70efed297c"
 
 [[projects]]
   digest = "1:bb495ec276ab82d3dd08504bbc0594a65de8c3b22c6f2aaa92d05b73fbf3a82e"
@@ -360,12 +379,15 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/aws/aws-sdk-go/aws",
     "github.com/aws/aws-sdk-go/aws/session",
     "github.com/aws/aws-sdk-go/service/cloudwatchevents",
     "github.com/google/go-github/github",
     "github.com/liamg/clinch/prompt",
     "github.com/mitchellh/go-homedir",
+    "github.com/owenrumney/clinch/prompt",
     "github.com/spf13/cobra",
+    "github.com/spf13/pflag",
     "github.com/spf13/viper",
     "golang.org/x/oauth2",
   ]
